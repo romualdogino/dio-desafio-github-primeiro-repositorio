@@ -1,1 +1,2 @@
-hellodir!
+hello!
+# item criado usando comando  $ echo hello! -> hello.txt
