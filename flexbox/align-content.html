@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>align content</title>
+  <style>
+    .content{
+      /* margin: auto; */
+      height: 350px;
+      max-width: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid black;
+    }
+    .item{
+      background-color: orange;
+      padding: 0 5px;
+      margin: 5px;
+      flex: 1;
+      text-align: center;
+      color: white;
+    }
+    .stretch{
+      align-content: stretch;
+    }
+    .center{
+      align-content: center;
+    }
+
+  </style>
+</head>
+<body>
+  <p>default</p>
+  <div class="content">
+    <div class="item">Lorem ipsum dolor sit, amet consectetur adipisicing </div>
+    <div class="item">Lorem ipsum dolor sit, amet cons</div>
+    <div class="item">Lorem ipsum dolor sit</div>
+    <div class="item">Lorem ipsum dolor sit, amet consectetur adque recusandae? Necessitatibus!</div>
+    <div class="item">amet consectetur adipisicing elit. Quidem consequatur </div>
+    <div class="item">amet consectetur adipisicing elit. Quidem consequatur </div>
+    <div class="item">amet consectetur adipisicing elit. Quidem consequatur </div>
+  </div>
+  <p>stretch</p>
+  <div class="content stretch">
+    <div class="item">Lorem ipsum dolor sit, amet consectetur adipisicing </div>
+    <div class="item">Lorem ipsum dolor sit, amet cons</div>
+    <div class="item">Lorem ipsum dolor sit</div>
+    <div class="item">Lorem ipsum dolorpraesentium culpa dolorum magni ut atque perferendis quasi rerum non sit expedita ducimus, labore laborum tempore veniam itaque recusandae? Necessitatibus!</div>
+    <div class="item">amet consectetur adipisicing elit. Quidem consequatur </div>
+    <div class="item">amet consectetur adipisicing elit. Quidem consequatur </div>
+    <div class="item">amet consectetur adipisicing elit. Quidem consequatur </div>
+  </div>
+  <p>center</p>
+  <div class="content center">
+    <div class="item">Lorem ipsum dolor sit, amet consectetur adipisicing </div>
+    <div class="item">Lorem ipsum dolor sit, amet cons</div>
+    <div class="item">Lorem ipsum dolor sit</div>
+    <div class="item">Lorem ipsum dol laborum tempore veniam itaque recusandae? Necessitatibus!</div>
+    <div class="item">amet consectetur adipisicing elit. Quidem consequatur </div>
+    <div class="item">amet consectetur adipisicing elit. Quidem consequatur </div>
+    <div class="item">amet consectetur adipisicing elit. Quidem consequatur </div>
+  </div>
+</body>
+</html>

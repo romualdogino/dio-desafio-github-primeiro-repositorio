@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>flex basis</title>
+  <style>
+    .flex-container {
+      max-width: 300px;
+      border: 1px solid black;
+      display: flex;
+    }
+
+    .items {
+      background-color: coral;
+      color: white;
+      text-align: center;
+      margin: 5px;
+    }
+    .bauto{
+      flex-basis: auto;
+    }
+    .bauto-0{
+      flex-basis: 0;
+    }
+    .w100{
+      flex-basis: 100px;
+    }
+    .fg-1{
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <p>auto</p>
+  <div class="flex-container">
+    <div class="items bauto fg-1">a</div>
+    <div class="items bauto fg-1">bbbb</div>
+    <div class="items bauto fg-1">c</div>
+    <div class="items bauto fg-1">def</div>
+  </div>
+  <p>0 zero</p>
+  <div class="flex-container">
+    <div class="items bauto-0 fg-1">a</div>
+    <div class="items bauto-0 fg-1">bbbb</div>
+    <div class="items bauto-0 fg-1">c</div>
+    <div class="items bauto-0 fg-1">def</div>
+  </div>
+  <p>basis + width</p>
+  <div class="flex-container">
+    <div class="items w100">a</div>
+    <div class="items w100">bb</div>
+    <div class="items w100">c</div>
+    <div class="items w100">def</div>
+  </div>
+</body>
+
+</html>
