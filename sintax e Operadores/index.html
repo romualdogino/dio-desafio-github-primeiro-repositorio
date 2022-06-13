@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sintax e Operadores</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+    }
+
+    .pergunta {
+      align-items: center;
+    }
+
+    .pergunta h2 {
+      text-align: center;
+    }
+
+    #resposta {
+      text-align: center;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pergunta">
+    <h2>entre com 2 numeros inteiros</h2>
+    <input type="text" id="numero1" />
+    <input type="text" id="numero2" />
+    <input type="button" id="btn" value="testar">
+  </div>
+  <div id="resposta"></div>
+
+  <script>
+    var btn = document.querySelector('#btn')
+    var resposta = document.querySelector('#resposta')
+
+    btn.addEventListener('click', () => {
+      teste()
+    })
+
+    function teste() {
+      var n1 = document.querySelector('#numero1').value
+      var n2 = document.querySelector('#numero2').value
+      var resp1, resp2, resp3 = ''
+      var soma = parseInt(n1) + parseInt(n2);
+      n1 === n2 ? resp1 = "são iguas" : resp1 = "não são iguais"
+      soma <= 10 ? resp2 = "menor que 10" : resp2 = "maior que 10"
+      soma <= 20 ? resp3 = "menor que 20" : resp3 = "maior que 20"
+
+      resposta.innerHTML = `Os numeros <b>${n1}</b> e <b>${n2}</b> ${resp1} <br/> 
+                            Sua soma é <b>${(parseInt(n1) + parseInt(n2))}</b>
+                             que e ${resp2} e ${resp3}
+                            `
+    }
+  </script>
+</body>
+
+</html>
