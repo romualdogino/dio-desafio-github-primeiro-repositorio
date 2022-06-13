@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>To Do</title>
+</head>
+<style>
+  body {
+    display: flex;
+    align-items: center;
+  }
+
+  .digitar {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+  }
+  .digitar input {
+    width: 100%;
+  }
+  
+
+  .content {
+    margin: auto;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #lista {
+    display: flex;
+    list-style: decimal-leading-zero;
+    width: 80%;
+    flex-direction: column;
+  }
+
+  #lista li {
+    display: flex;
+    list-style: decimal-leading-zero;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #lista li:hover{
+    background-color: #efefef;
+  }
+
+  .checkbox {
+    max-width: 50px;
+    align-items: center;
+    flex: 1;
+  }
+
+  .msg {
+    width: 90%;
+    align-items: center;
+    flex: 1;
+  }
+
+  .remove {
+    align-items: center;
+    flex: 1;
+    max-width: 30px;
+  }
+  .remove:hover {
+   background-color: red;
+   color: white;
+  }
+</style>
+
+<body>
+  <div class="content">
+    <div class="digitar"><input id="texto" type="text" placeholder="to-do" /></div>
+
+    <ul id="lista">
+
+    </ul>
+
+    <script>
+      var Input = document.querySelector('#texto')
+      var Lista = document.querySelector('#lista')
+
+      function feito(e) {
+        if (e.target.parentNode.style.textDecoration == 'line-through') {
+          e.target.parentNode.style.textDecoration = 'none'
+          e.target.parentNode.style.color = 'black'
+        } else {
+          e.target.parentNode.style.textDecoration = 'line-through'
+          e.target.parentNode.style.color = 'red'
+        }
+      }
+
+      function remover(e) {
+        e.target.parentNode.remove()
+      }
+
+      Input.addEventListener('keypress', (event) => {
+        if (event.key == 'Enter') {
+          // console.log(event.target.value)
+        
+          Lista.innerHTML += `
+          <li> 
+            <input class="checkbox" type="checkbox" onclick="feito(event)">
+            <span class="msg">${event.target.value}</span>
+            <input class="remove" type="button" onclick="remover(event)" value="X" 
+          </li>`
+
+          event.target.value  = ''
+        }
+      })
+    </script>
+  </div>
+</body>
+
+</html>
